@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*1、编写一个函数，计算任意两个数字之间所能组成的奇数个数，传入的数字必须是个位数
+
+         比如： 计算0-3之间能组成的奇数个是01、03、11、13、21、23、31、33
+        */ 
+       //1.创建函数，接收任意两个数字
+       /*
+       需求分析
+       1.0-3之间有0.1.2.3。
+       2.任意两个位置 即有 十位和个位上 要有循环嵌套
+       3.个位上分别是0 1 2 3或者十位上分别是0 1 2 3*/ 
+        
+       function oddNumber(a,b){
+        var count1=0
+        //外层循环，定义变量接收所组成的奇数中的个位数 0 1 2 3
+       for(var i=a;i<=b;i++){
+        //内层循环，接收所组成的奇数中的十位数 0 1 2 3
+        for(var j=a;j<=b;j++){
+            //写出i 和j的联系，它们两个数字组成一个数
+            var shuZi=i+j*10
+            //判断奇数的条件 %2！==0
+            if(shuZi%2!==0){
+                console.log(shuZi)
+                count1++
+            }
+        }
+       }return count1//返回count1,把以上函数中的结果赋值给下面的代码
+
+       } var m=oddNumber(1,7)//此处可输入任意两个奇数(a,b).注意两者大小
+       console.log(m)
+    </script>
+</body>
+</html>
